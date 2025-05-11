@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+body {
+    background-color: #040a10;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  display: none;
+}
+.custom-scroll {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.nav {
+    background-color: #06101b;
+}
+.dark {
+    background-color: #060d14;
+}
+
+.subdark {
+    background-color: #0d1720;
+}
+.subdarker {
+    background-color: #0a121b;
+}
+
+.offwhite {
+    color: #c2c2c2;
+}
+.offwhite-darker {
+    color: #a1a0a0;
+}
+.theshadow {
+    box-shadow: 0px 0px 10px 1px rgba(0, 255, 221, 0.278);
+
+}
