@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { Timestamp } from "firebase/firestore";
-
+import { useNavigate } from "react-router-dom";
 
 type Event = {
     eventId: string;
@@ -23,6 +23,7 @@ type Fight = {
 };
 
 export const UpcomingEvent: React.FC = () => {
+    const navigate = useNavigate();
     const [event, setEvent] = useState<Event | null>(null);
     useEffect(() => {
         const fetchEvent = async () => {
@@ -49,7 +50,7 @@ export const UpcomingEvent: React.FC = () => {
           <div
             key={fight.id}
             className="p-4 subdarker cursor-pointer"
-            onClick={() => window.location.href = `/fight/${fight.id}`}
+            onClick={() => navigate(`/fight/${fight.id}`)}
           >
             <p className="font-semibold text-2xl">{fight.title}</p>
             <p>{fight.fighterA} ({fight.fighterARecord}) vs {fight.fighterB} ({fight.fighterBRecord})</p>
